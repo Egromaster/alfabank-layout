@@ -1,0 +1,61 @@
+/* Дизайн-токены: цвета, шрифты, отступы, радиусы */
+
+:root {
+  /* === Цвета бренда Альфа-Банк === */
+  --color-alfa-red: #EF3124;
+  --color-alfa-red-hover: #D62A1F;
+  --color-alfa-black: #0A0A0A;
+  --color-alfa-bg-dark: #131313;
+
+  /* === Нейтральные === */
+  --color-white: #FFFFFF;
+  --color-bg: #F2F3F4;
+  --color-card: #FFFFFF;
+  --color-text-primary: #0F0F0F;
+  --color-text-secondary: #757575;
+  --color-text-on-dark: #FFFFFF;
+  --color-border: #E7E8EA;
+
+  /* === Акцентные блоки === */
+  --color-violet: #B49EE5;        /* hero "Альфа-Вклад" */
+  --color-pink: #FAC5C0;          /* кэшбэк-баннер */
+  --color-peach: #FFD9B5;         /* Альфа-Карта */
+  --color-lavender: #E6DCFA;      /* кредит наличными */
+  --color-blue-card: #2C3E80;     /* инвестиции / кредитка */
+
+  /* === Типографика === */
+  --font-primary: 'Styrene A', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-fallback: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Шкала размеров (clamp для адаптива) */
+  --fs-h1: clamp(28px, 3vw, 44px);
+  --fs-h2: clamp(24px, 2.5vw, 36px);
+  --fs-h3: clamp(18px, 1.5vw, 22px);
+  --fs-body: 16px;
+  --fs-small: 14px;
+
+  /* === Отступы === */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  /* === Радиусы === */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* === Контейнер === */
+  --container-max: 1280px;
+  --container-padding: clamp(16px, 4vw, 80px);
+
+  /* === Тени и переходы === */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --transition: 0.2s ease;
+}
