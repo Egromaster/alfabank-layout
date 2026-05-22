@@ -611,3 +611,166 @@ body {
   .phone-mock__screen { width: 140px; height: 200px; }
   .phone-mock__tag, .phone-mock__balance { font-size: 12px; padding: 8px 12px; }
 }
+
+/* ============================================
+   БЛОК 4: «Сервисы»
+   ============================================ */
+
+.services {
+  padding: clamp(40px, 6vw, 80px) 0;
+  background: var(--color-bg);
+}
+
+.services__title { margin-bottom: 24px; }
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.services__left,
+.services__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Карточка курсов валют */
+.currency-card {
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.currency-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.currency-card__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tabs--sm .tab { padding: 6px 12px; font-size: 13px; }
+
+.currency-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.currency-table th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  padding: 4px 8px;
+  text-transform: lowercase;
+}
+.currency-table th:nth-child(2),
+.currency-table th:nth-child(3) { text-align: right; }
+.currency-table td {
+  padding: 8px;
+  border-top: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+.currency-table td:nth-child(2),
+.currency-table td:nth-child(3) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.currency-table small {
+  color: var(--color-text-secondary);
+  font-size: 11px;
+}
+.currency-flag { margin-right: 6px; }
+
+.currency-card__more {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+.currency-card__more:hover { color: var(--color-alfa-red); }
+
+.currency-card__note {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* Сервисная карточка (универсальная) */
+.service-card {
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: transform var(--transition);
+}
+.service-card:hover { transform: translateY(-2px); }
+
+.service-card--dark {
+  background: var(--color-alfa-black);
+  color: var(--color-white);
+}
+
+.service-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.service-card__sub {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.service-card--dark .service-card__sub { color: rgba(255, 255, 255, 0.7); }
+
+.service-card__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0.04);
+}
+.service-card__icon--red { background: var(--color-alfa-red); color: var(--color-white); }
+.service-card__icon--arrows {
+  background: var(--color-alfa-red);
+  color: var(--color-white);
+  font-size: 26px;
+}
+.service-card__icon--dark { background: rgba(255, 255, 255, 0.1); color: var(--color-white); }
+
+/* Support card отдельно — растягиваем чтобы заполнить высоту */
+.service-card--support {
+  flex: 1;
+  align-items: center;
+}
+
+/* Адаптив блока 4 */
+@media (max-width: 900px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .currency-card { padding: 16px; }
+  .service-card { padding: 16px; }
+  .service-card__icon { width: 40px; height: 40px; font-size: 18px; }
+}
