@@ -970,3 +970,194 @@ body {
   .gift { font-size: 64px; }
   .sim-card { width: 60px; height: 80px; font-size: 14px; }
 }
+
+/* ============================================
+   БЛОК 6: «О банке»
+   ============================================ */
+
+.about {
+  padding: clamp(40px, 6vw, 80px) 0 64px;
+  background: var(--color-bg);
+}
+
+.about__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.about__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-card {
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+  min-height: 240px;
+}
+
+.about-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 60%;
+}
+
+.about-card__title {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.about-card__title--md { font-size: clamp(18px, 1.6vw, 22px); }
+
+.about-card__sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.about-card__visual {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+}
+
+/* Большая тёмная карточка с hh */
+.about-card--hero {
+  background: var(--color-alfa-black);
+  color: var(--color-white);
+  min-height: 320px;
+}
+.about-card--hero .about-card__sub { color: rgba(255, 255, 255, 0.6); }
+
+.hh-mark {
+  width: 80px;
+  height: 80px;
+  background: var(--color-alfa-red);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 32px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transform: rotate(-8deg);
+}
+.coin {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD93D 0%, #FFA500 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-alfa-black);
+  font-weight: 700;
+  font-size: 22px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+.coin--1 { bottom: 20px; right: 100px; transform: rotate(-15deg); }
+.coin--2 { bottom: 60px; right: 20px; transform: rotate(8deg); width: 50px; height: 50px; font-size: 18px; }
+.coin--3 { bottom: 10px; right: 50px; transform: rotate(25deg); width: 45px; height: 45px; font-size: 16px; }
+
+/* Карточка статистики */
+.about-card--stats {
+  background: var(--color-card);
+  min-height: 152px;
+}
+
+.about-stats {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  list-style: disc;
+  padding-left: 18px;
+}
+.about-stats li { padding-left: 4px; }
+
+.gold-a {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD93D 0%, #FFA500 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-alfa-black);
+  font-weight: 700;
+  font-size: 36px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Карточка отзывов */
+.about-card--reviews {
+  background: var(--color-card);
+  min-height: 152px;
+}
+
+.review-mock {
+  width: 80px;
+  height: 100px;
+  background: var(--color-alfa-red);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-6deg);
+  box-shadow: 0 8px 20px rgba(239, 49, 36, 0.25);
+}
+
+.review-mock__star {
+  color: var(--color-white);
+  font-size: 36px;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-bg);
+  padding: 32px 0;
+}
+
+.footer__copy {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+/* Адаптив блока 6 */
+@media (max-width: 900px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about-card--hero { min-height: 280px; }
+}
+@media (max-width: 480px) {
+  .about-card { padding: 20px; min-height: 200px; flex-direction: column; }
+  .about-card__text { max-width: 100%; }
+  .about-card__visual { align-self: flex-end; min-width: auto; }
+  .hh-mark { width: 60px; height: 60px; font-size: 24px; }
+  .coin { width: 40px !important; height: 40px !important; font-size: 16px !important; }
+}
