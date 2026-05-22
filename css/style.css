@@ -1,0 +1,350 @@
+/* ============================================
+   БАЗОВЫЕ СТИЛИ
+   ============================================ */
+
+body {
+  font-family: var(--font-fallback);
+  font-size: var(--fs-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  font-feature-settings: "ss01" on, "ss02" on;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  width: 100%;
+}
+
+/* ============================================
+   КНОПКИ
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  transition: background var(--transition), opacity var(--transition);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.btn--primary {
+  background: var(--color-alfa-red);
+  color: var(--color-white);
+}
+.btn--primary:hover { background: var(--color-alfa-red-hover); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* ============================================
+   БЛОК 1: HERO
+   ============================================ */
+
+.hero {
+  background: var(--color-alfa-bg-dark);
+  color: var(--color-text-on-dark);
+  padding: 24px 0 56px;
+  border-bottom-left-radius: var(--radius-xl);
+  border-bottom-right-radius: var(--radius-xl);
+}
+
+/* --- HEADER --- */
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav__link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  transition: color var(--transition);
+}
+.nav__link:hover { color: var(--color-white); }
+.nav__link--active { color: var(--color-white); }
+
+.header__search {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: background var(--transition);
+}
+.header__search:hover { background: rgba(255, 255, 255, 0.1); }
+
+.header__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.header__burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+}
+.header__burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+}
+
+/* --- HERO GRID --- */
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, minmax(180px, auto));
+  gap: 16px;
+}
+
+.hero-card {
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+/* Большая фиолетовая — занимает 2 колонки и 1 строку */
+.hero-card--vklad {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  background: var(--color-violet);
+  color: var(--color-alfa-black);
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16px;
+  min-height: 260px;
+}
+.hero-card--vklad .hero-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Кредитка — занимает 1 строку из двух (справа сверху) */
+.hero-card--credit {
+  grid-column: 3;
+  grid-row: 1;
+  background: var(--color-blue-card);
+  color: var(--color-white);
+  min-height: 260px;
+}
+
+/* Инвестиции — занимает 1 строку (справа снизу) */
+.hero-card--invest {
+  grid-column: 3;
+  grid-row: 2;
+  background: var(--color-alfa-red);
+  color: var(--color-white);
+}
+
+/* Кредит наличными */
+.hero-card--cash {
+  grid-column: 1;
+  grid-row: 2;
+  background: var(--color-lavender);
+  color: var(--color-alfa-black);
+}
+
+/* Альфа-Карта */
+.hero-card--alfacard {
+  grid-column: 2;
+  grid-row: 2;
+  background: var(--color-peach);
+  color: var(--color-alfa-black);
+}
+
+.hero-card__title {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.hero-card__title--sm {
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 500;
+}
+
+.hero-card__subtitle {
+  font-size: 16px;
+  margin-top: 12px;
+  opacity: 0.8;
+  max-width: 260px;
+}
+
+.hero-card__btn {
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+.hero-card__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+
+/* Декоративные элементы карточек (плейсхолдеры под иллюстрации) */
+
+.vklad-22 {
+  font-size: clamp(80px, 12vw, 180px);
+  font-weight: 700;
+  background: linear-gradient(135deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.vklad-22 span { font-size: 0.6em; }
+
+.card-mock {
+  width: 90px;
+  height: 130px;
+  background: var(--color-alfa-red);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transform: rotate(-8deg);
+}
+.card-mock--red { background: var(--color-alfa-red); }
+
+.invest-icon {
+  width: 64px;
+  height: 64px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-alfa-red);
+  font-size: 32px;
+  font-weight: 700;
+  transform: rotate(-8deg);
+}
+
+/* ============================================
+   АДАПТИВ
+   ============================================ */
+
+/* Tablet: 1024px и меньше */
+@media (max-width: 1024px) {
+  .nav { gap: 20px; }
+  .nav__link { font-size: 14px; }
+  .hero__grid { gap: 12px; }
+  .hero-card { padding: 20px; }
+}
+
+/* Tablet portrait / small laptop: 768px и меньше */
+@media (max-width: 768px) {
+  .hero { padding: 16px 0 40px; }
+  .header {
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+  }
+  .nav { display: none; }
+  .header__search { display: none; }
+  .header__actions { display: none; }
+  .header__burger { display: flex; }
+
+  .hero__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .hero-card--vklad {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    min-height: 220px;
+  }
+  .hero-card--credit {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 180px;
+  }
+  .hero-card--invest {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .hero-card--cash {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .hero-card--alfacard {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+/* Mobile: 480px и меньше */
+@media (max-width: 480px) {
+  .hero-card--vklad {
+    flex-direction: column;
+    min-height: 280px;
+  }
+  .vklad-22 { font-size: 72px; }
+  .hero-card { padding: 16px; }
+  .hero-card__title { font-size: 24px; }
+  .hero-card__title--sm { font-size: 16px; }
+  .hero-card__subtitle { font-size: 14px; }
+}
+
+/* Очень мелкие экраны: 360px */
+@media (max-width: 380px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-card--vklad,
+  .hero-card--credit,
+  .hero-card--invest,
+  .hero-card--cash,
+  .hero-card--alfacard {
+    grid-column: 1;
+  }
+  .hero-card--vklad { grid-row: 1; }
+  .hero-card--credit { grid-row: 2; }
+  .hero-card--invest { grid-row: 3; }
+  .hero-card--cash { grid-row: 4; }
+  .hero-card--alfacard { grid-row: 5; }
+}

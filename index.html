@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Альфа-Банк</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- БЛОК 1: HERO (тёмный фон с навигацией и 5 карточками) -->
+  <!-- ============================================ -->
+  <section class="hero">
+    <div class="container">
+
+      <!-- Хедер: лого + навигация + поиск + кнопки -->
+      <header class="header">
+        <a href="#" class="logo" aria-label="Альфа-Банк">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="6" fill="#EF3124"/>
+            <path d="M11 22L16 9L21 22M13 18H19" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#" class="nav__link nav__link--active">Частным лицам</a>
+          <a href="#" class="nav__link">Малому бизнесу и ИП</a>
+          <a href="#" class="nav__link">Среднему и крупному бизнесу</a>
+        </nav>
+
+        <button class="header__search" aria-label="Поиск">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="6" stroke="white" stroke-width="1.6"/>
+            <path d="M13.5 13.5L17 17" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <div class="header__actions">
+          <button class="btn btn--ghost">Стать клиентом</button>
+          <button class="btn btn--primary">Войти</button>
+        </div>
+
+        <button class="header__burger" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </header>
+
+      <!-- Сетка из 5 карточек -->
+      <div class="hero__grid">
+
+        <!-- Большая карточка: Альфа-Вклад 22% -->
+        <article class="hero-card hero-card--vklad">
+          <div class="hero-card__content">
+            <h2 class="hero-card__title">Альфа-Вклад</h2>
+            <p class="hero-card__subtitle">Успейте получить 22% годовых — только до 31 мая</p>
+            <button class="btn btn--primary hero-card__btn">Открыть вклад</button>
+          </div>
+          <div class="hero-card__visual" aria-hidden="true">
+            <div class="vklad-22">22<span>%</span></div>
+          </div>
+        </article>
+
+        <!-- Кредитная карта -->
+        <article class="hero-card hero-card--credit">
+          <h3 class="hero-card__title hero-card__title--sm">Кредитная карта</h3>
+          <div class="hero-card__visual hero-card__visual--credit" aria-hidden="true">
+            <div class="card-mock">A</div>
+          </div>
+        </article>
+
+        <!-- Инвестируйте и зарабатывайте -->
+        <article class="hero-card hero-card--invest">
+          <h3 class="hero-card__title hero-card__title--sm">Инвестируйте<br>и зарабатывайте</h3>
+          <div class="hero-card__visual hero-card__visual--invest" aria-hidden="true">
+            <div class="invest-icon">↗</div>
+          </div>
+        </article>
+
+        <!-- Кредит наличными -->
+        <article class="hero-card hero-card--cash">
+          <h3 class="hero-card__title hero-card__title--sm">Кредит наличными</h3>
+          <div class="hero-card__visual hero-card__visual--cash" aria-hidden="true">💰</div>
+        </article>
+
+        <!-- Бесплатная Альфа-Карта -->
+        <article class="hero-card hero-card--alfacard">
+          <h3 class="hero-card__title hero-card__title--sm">Бесплатная<br>Альфа-Карта</h3>
+          <div class="hero-card__visual hero-card__visual--alfacard" aria-hidden="true">
+            <div class="card-mock card-mock--red">A</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- БЛОК 2: «Выбирайте лучшее» -->
+  <!-- TODO -->
+  <!-- ============================================ -->
+
+  <!-- ============================================ -->
+  <!-- БЛОК 3: Кэшбэк-баннер -->
+  <!-- TODO -->
+  <!-- ============================================ -->
+
+  <!-- ============================================ -->
+  <!-- БЛОК 4: «Сервисы» -->
+  <!-- TODO -->
+  <!-- ============================================ -->
+
+  <!-- ============================================ -->
+  <!-- БЛОК 5: «Пользуйтесь выгодными предложениями» -->
+  <!-- TODO -->
+  <!-- ============================================ -->
+
+  <!-- ============================================ -->
+  <!-- БЛОК 6: «О банке» -->
+  <!-- TODO -->
+  <!-- ============================================ -->
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
