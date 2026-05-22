@@ -774,3 +774,199 @@ body {
   .service-card { padding: 16px; }
   .service-card__icon { width: 40px; height: 40px; font-size: 18px; }
 }
+
+/* ============================================
+   БЛОК 5: «Пользуйтесь выгодными предложениями»
+   ============================================ */
+
+.offers {
+  padding: clamp(40px, 6vw, 80px) 0;
+  background: var(--color-bg);
+}
+
+.offers__title {
+  margin-bottom: 32px;
+}
+
+.offers__tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--color-card);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.offers__tabs::-webkit-scrollbar { display: none; }
+
+.offer-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+.offer-tab:hover { background: rgba(0, 0, 0, 0.04); }
+.offer-tab.is-active {
+  background: var(--color-alfa-black);
+  color: var(--color-white);
+}
+
+.offer-tab__ico {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.offer-tab__ico--dark { background: var(--color-alfa-black); color: var(--color-white); }
+.offer-tab.is-active .offer-tab__ico--dark { background: var(--color-white); color: var(--color-alfa-black); }
+.offer-tab__ico--travel { background: var(--color-alfa-red); color: white; }
+.offer-tab__ico--afisha { background: #F97316; color: white; }
+.offer-tab__ico--fuel { background: #FBBF24; color: white; }
+.offer-tab__ico--split { background: #8B5CF6; color: white; }
+.offer-tab__ico--insurance { background: var(--color-alfa-red); color: white; }
+
+.offers__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.offer-card {
+  border-radius: var(--radius-md);
+  padding: 28px;
+  min-height: 220px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.offer-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 50%;
+}
+
+.offer-card__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.offer-card__sub {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.4;
+}
+
+.offer-card__link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  background: var(--color-white);
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.offer-card__visual {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  position: relative;
+}
+
+/* Карточка SIM (светло-голубая/лавандовая) */
+.offer-card--sim {
+  background: linear-gradient(135deg, #DDEEFF 0%, #E8F1FF 100%);
+}
+.sim-card {
+  background: var(--color-alfa-red);
+  width: 80px;
+  height: 100px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  transform: rotate(-12deg);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.sim-arrow {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 40px;
+  height: 40px;
+  background: #6BCB77;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  transform: rotate(8deg);
+}
+
+/* Карточка интернет (розовая с подарком) */
+.offer-card--internet {
+  background: linear-gradient(135deg, #FAC5C0 0%, #F8D4D0 100%);
+}
+.gift {
+  font-size: 100px;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+}
+.gift-percent {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  background: var(--color-violet);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Адаптив блока 5 */
+@media (max-width: 768px) {
+  .offers__grid { grid-template-columns: 1fr; }
+  .offer-card { min-height: 180px; padding: 20px; }
+}
+@media (max-width: 480px) {
+  .offer-card { flex-direction: column; }
+  .offer-card__text { max-width: 100%; }
+  .offer-card__visual { align-self: flex-end; font-size: 48px; }
+  .gift { font-size: 64px; }
+  .sim-card { width: 60px; height: 80px; font-size: 14px; }
+}
